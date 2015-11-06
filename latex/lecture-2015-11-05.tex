@@ -1,0 +1,179 @@
+
+% 
+% Lecture 2015-11-05
+%
+% Copyright 2015, Emil Hemdal
+%
+% License: Creative Commons Attribution-ShareAlike 4.0 International
+% License URL: https://creativecommons.org/licenses/by-sa/4.0/
+%
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, amscd}
+\usepackage[a4paper,margin=2cm,footskip=1.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+%\usepackage{hyperref}
+
+\title{Lecture 2015-11-05}
+
+\author{\copyright~Copyright 2015, Emil Hemdal.\\
+   License: https://creativecommons.org/licenses/by-sa/4.0/\\
+   Creative Commons Attribution-ShareAlike 4.0 International}
+
+\date{05 November 2015}
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+Det gäller också att\\
+\(||\mathbf{u}\times \mathbf{v}|| = ||\mathbf{u}||*||\mathbf{v}||*sin(\alpha)\) (där \(\alpha\) minsa vinken mellan \(\mathbf{u}\) och \(\mathbf{v}\))\\
+\\
+Det vill säga arean av parallellogrammen som spänns upp \(\mathbf{u}\), \(\mathbf{v}\), \(\mathbf{v}+\mathbf{u}\)\\
+\\
+\underline{Exempel} Beräkna arean av en triangel med hörn i \(A = (1, 1, 0), B = (3, 0, 2), C = (0, -1, 1)\)\\
+\\
+\underline{Lösning} \(\frac{1}{2}*||\vec{AB} \times \vec{AC}|| = \frac{1}{2} * || \bigl[\begin{smallmatrix}
+3 \\ -4 \\ -5
+\end{smallmatrix} \bigr] || = \frac{1}{2} * \sqrt{9 + 16 + 25} = \frac{5}{\sqrt{2}} \)\\
+\\
+(punkt) För att beskriva en linje i \(R^2\) behövs en skärning med y-axeln (\(m\)) och lutning (\(k\)).\\
+\(y=k*x+m\) (linjens ekvation)\\
+\\
+(punkt) För att beskriva ett plan i \(R^3\) behövs en punkt \(P_0 = \bigl[\begin{smallmatrix}
+x_0 \\ y_0 \\ z_0
+\end{smallmatrix} \bigr] \) i planet och en vektor \(n = \bigl[\begin{smallmatrix}
+A \\ B \\ C
+\end{smallmatrix} \bigr] \)\footnote{Normalvektor} ortogonal mot planet.\\
+Varje annan punkt \(Q = \bigl[\begin{smallmatrix}
+x \\ y \\ z
+\end{smallmatrix} \bigr] \) ligger i planet om \(\vec{P_0 Q} (perpendicular) n \) det vill säga \(\vec{P_0 Q} * n = 0 \)\\
+Eftersom \(\vec{P_0 Q} = \bigl[\begin{smallmatrix}
+x - x_0 \\ y - y_0 \\ z - z_0
+\end{smallmatrix} \bigr] \) får vi\\
+\(0 = \bigl[\begin{smallmatrix}
+x - x_0 & y - y_0 & z - z_0
+\end{smallmatrix} \bigr] * \bigl[\begin{smallmatrix}
+A \\ B \\ C
+\end{smallmatrix} \bigr] = A(x-x_0) + V(y-y_0) + C(z-z_0) <=> Ax + By +Cz - Ax_0 - By_0 - Cz_0 = 0 \)\footnote{D (konstant) \( = Ax_0 - By_0 - Cz_0 \)}\\
+\(Ax + By +Cz = D \) <- planets ekvation på normalform med normalen \(n = \bigl[\begin{smallmatrix}
+A \\ B \\ C
+\end{smallmatrix} \bigr] \)\\
+\\
+\underline{Exempel} \(P_0 = \bigl[\begin{smallmatrix}
+3 \\ -1 \\ 7
+\end{smallmatrix} \bigr] \) och \(n = \bigl[\begin{smallmatrix}
+4 \\ 2 \\ -5
+\end{smallmatrix} \bigr] \) bestäm planet på normalform\\
+\\
+\underline{Lösning} Vi får \(A(x-x_0) + B(y-y_0) + C(z-z_0) = 4(x-3) + 2(y-(-1)) + (-5)(z-7) = 4x + 2y - 5z + 25 = 0 \) \\
+\\
+\underline{Exempel} Bestäm planets ekvation (normalform) för planet genom punkterna \(P_1 = \bigl[\begin{smallmatrix}
+1 \\ 2 \\ -1
+\end{smallmatrix} \bigr] P_2 = \bigl[\begin{smallmatrix}
+2 \\ 3 \\ 1
+\end{smallmatrix} \bigr] P_3 = \bigl[\begin{smallmatrix}
+3 \\ -1 \\ 2
+\end{smallmatrix} \bigr]\)\\
+\\
+\underline{Lösning} Eftersom \(P_1, P_2, P_3 \) i planet är \(\vec{P_1 P_2} = \bigl[\begin{smallmatrix}
+2 - 1 \\ 3 - 2 \\ 1 - (-1)
+\end{smallmatrix} \bigr] = \bigl[\begin{smallmatrix}
+1 \\ 1 \\ 2
+\end{smallmatrix} \bigr] \) och \(\vec{P_1 P_3} = \bigl[\begin{smallmatrix}
+2 \\ -3 \\ 3
+\end{smallmatrix} \bigr] \) parallella med planet. Och \(n = \vec{P_1 P_2} \times \vec{P_1 P_3} = \bigl[\begin{smallmatrix}
+9 \\ 1 \\ -5
+\end{smallmatrix} \bigr] \) är oktagonal mot planet och alltså en normalvektor.\\
+Det vill säga \(9(x-1) + 1(y-2) - 5(z+1) = 0 <=> 9x + y - 5z -16 = 0 \)\\
+\\
+Ett plan kan också ges av en punkt \(P_0\) och två vektorer \(\mathbf{u} = \bigl[\begin{smallmatrix}
+u_1 \\ u_2 \\ u_3
+\end{smallmatrix} \bigr] \) och \(\mathbf{v} = \bigl[\begin{smallmatrix}
+v_1 \\ v_2 \\ v_3
+\end{smallmatrix} \bigr] \) i planet.\\
+Planet består av alla punkter \(P = P_0 + s\mathbf{u} + t\mathbf{v} \) där \(s, t \in R \)\\
+\\
+\underline{Exempel} \(P_0 = \bigl[\begin{smallmatrix}
+1 \\ 2 \\ 3
+\end{smallmatrix} \bigr], \mathbf{u} = \bigl[\begin{smallmatrix}
+-1 \\ 2 \\ 2
+\end{smallmatrix} \bigr], \mathbf{v} = \bigl[\begin{smallmatrix}
+2 \\ 1 \\ 5
+\end{smallmatrix} \bigr] \)\\
+\(P = \bigl[\begin{smallmatrix}
+x \\ y \\ z
+\end{smallmatrix} \bigr] = \bigl[\begin{smallmatrix}
+1 \\ 2 \\ 3
+\end{smallmatrix} \bigr] + s \bigl[\begin{smallmatrix}
+-1 \\ 2 \\ 2
+\end{smallmatrix} \bigr] + t \bigl[\begin{smallmatrix}
+2 \\ 1 \\ 5
+\end{smallmatrix} \bigr] \) där \(s, t \in R \)\\
+eller \(\bigl\{\begin{smallmatrix}
+x = 1 - s + 2t \\ y = 2 + 2s + t \\ z = 3 + 2s + 5t
+\end{smallmatrix} \)\footnote{Parameterform}\\
+\\
+Byt representation till normalform genom att bestämma \(n = \mathbf{u} \times \mathbf{v}\)\\
+\(\mathbf{u} \times \mathbf{v} = \bigl[\begin{smallmatrix}
+8 \\ 9 \\ -5
+\end{smallmatrix} \bigr] \) och planet: \(8(x-1) + 9(y-2) + (-5)(z-3) = 0 \)\\
+Vi får \(8x + 9g - 5z = 11 \)\\
+\\
+Linje i \(R^3\)\\
+Antag linje \(L\) parallell med vektor \(\mathbf{v} = \bigl[\begin{smallmatrix}
+v_1 \\ v_e? \\ v_s?
+\end{smallmatrix} \bigr] \) och går igenom en punkt \(P_0 = \bigl[\begin{smallmatrix}
+x_0 \\ y_0 \\ z_0
+\end{smallmatrix} \bigr] \)\\
+\(L\) består av alla punkter \(P = \bigl[\begin{smallmatrix}
+x \\ y \\ z
+\end{smallmatrix} \bigr] \)\\
+Så att \(\vec{P_0 P} \) är parallell med \(\mathbf{v}\) det vill säga \(\vec{P_0 P} = t * \mathbf{v} \) där \(t \in R \)\\
+Eller \(\bigl[\begin{smallmatrix}
+x - x_0 \\ y - y_0 \\ z - z_0
+\end{smallmatrix} \bigr] = t * \bigl[\begin{smallmatrix}
+v1 \\ v2 \\ v3
+\end{smallmatrix} \bigr] \)\\
+\(\bigl\{\begin{smallmatrix}
+x = x_0 + tv_1 \\ y = y_0 + tv_2 \\ z = z_0 + tv_3
+\end{smallmatrix} \)\\
+\\
+\underline{Exempel} Linjen genom punkt \(\bigl[\begin{smallmatrix}
+1 \\ 2 \\ -3
+\end{smallmatrix} \bigr] \) parallell med \(\mathbf{v} = \bigl[\begin{smallmatrix}
+4 \\ 5 \\ -7
+\end{smallmatrix} \bigr] \) \\
+har parameterframställningen \(\bigl\{\begin{smallmatrix}
+x = 1 + 4t \\ y = 2 + 5t \\ z = -3 - 7t
+\end{smallmatrix}, t \in R\)\\
+Kan lösa ut \(t\)\\
+\(t = \frac{x - 1}{4}, t = \frac{-z - 3}{7}, t = \frac{y - 2}{5} \)\\
+(i parameterform av linjen lös ut \(t\). Vi får: \\
+\(\frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3} \)
+\\
+\underline{Exempel} (a) Bestäm ekvationen för linjen \(L\) som går genom punkterna \(P_1 = \bigl[\begin{smallmatrix}
+2 \\ 4 \\ -1
+\end{smallmatrix} \bigr] \) och \(P_2 = \bigl[\begin{smallmatrix}
+5 \\ 0 \\ 7
+\end{smallmatrix} \bigr] \)\\
+\underline{Lösning} Eftersom \(\vec{P_1 P_2} = \bigl[\begin{smallmatrix}
+3 \\ -4 \\ 8
+\end{smallmatrix} \bigr] \) är parallell med \(L\) och \(P_1 = \bigl[\begin{smallmatrix}
+2 \\ 4 \\ -1
+\end{smallmatrix} \bigr] \) ligger på \(L\) ges linjen av\\
+\(\bigl\{\begin{smallmatrix}
+x = 2 + 3t \\ y = 4 - 4t \\ z = -1 + 8t
+\end{smallmatrix} \) där \(t \in R\)\\
+\\
+(b) I vilken punkt skär linjen xy-planet?\\
+\(z=0 \) i xy-planet, det vill säga \(0 = -1 + 8t <=> t = \frac{1}{8} \)\\
+Vi får \(x = 2 + 3 * \frac{1}{8} = \frac{19}{8} \)\\
+\(y = 4 - 4 * \frac{1}{8} = \frac{7}{2}, z = 0 \)\\
+Svar: i punkt \(\bigl[\begin{smallmatrix}
+19/8 \\ 7/2 \\ 0
+\end{smallmatrix} \bigr] \)
+
+\end{document}
